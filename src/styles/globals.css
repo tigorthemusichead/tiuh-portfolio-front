@@ -2,26 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  box-sizing: border-box;
+}
+
+.logo img {
+  display: block;
+}
+
+.logo video {
+  display: none;
+}
+
+.logo:hover img {
+  display: none;
+}
+
+.logo:hover video {
+  display: block;
+}
+
+.redactor h1 {
+  font-size: 4em;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.redactor h2 {
+  font-size: 3.2em;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.redactor h3 {
+  font-size: 2.7em;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.redactor h4 {
+  font-size: 2.2em;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.redactor h5 {
+  font-size: 1.7em;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.redactor h6 {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.redactor ul li {
+  list-style: disc;
+  margin-left: 2em;
+}
+
+.redactor ol li {
+  list-style: decimal;
+  margin-left: 2em;
+}
+
+.redactor blockquote {
+  border-left: 3px solid #d0d0d0;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.redactor a {
+  color: #474747;
+  font-weight: 500;
+}
+
+.redactor a:hover {
+  text-decoration: underline;
+}
+
+.redactor p {
+  margin-bottom: 0.8em;
 }
