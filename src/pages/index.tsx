@@ -33,7 +33,7 @@ export default function Home(props: HomeProps) {
                                         <>
                                             {//@ts-ignore
                                             <img ref={ref}
-                                                 className={"cursor-pointer"}
+                                                 className={"cursor-pointer w-full"}
                                                  onClick={open}
                                                  crossOrigin={"anonymous"}
                                                  src={`${API_URL}${item.attributes.image.data[0].attributes.formats.small.url}`}
@@ -56,10 +56,16 @@ export default function Home(props: HomeProps) {
 }
 
 export const getStaticProps = async () => {
-    const response = await axios.get(`${API_URL}/api/works?populate=deep`);
-    return {
-        props: {
-            data: response.data
+    try {
+        const response = await axios.get(`${API_URL}/api/works?populate=deep`);
+        return {
+            props: {
+                data: response.data
+            }
+        }
+    } catch (err) {
+        return {
+            notFound: true
         }
     }
 }

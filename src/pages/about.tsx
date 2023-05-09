@@ -18,10 +18,16 @@ const About = (props: AboutProps) => {
 export default About;
 
 export const getStaticProps = async () => {
-    const response = await axios.get(`${API_URL}/api/about?populate=deep`);
-    return {
-        props: {
-            data: response.data
+    try {
+        const response = await axios.get(`${API_URL}/api/about?populate=deep`);
+        return {
+            props: {
+                data: response.data
+            }
+        }
+    } catch (err) {
+        return {
+            notFound: true
         }
     }
 }

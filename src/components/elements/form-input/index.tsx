@@ -5,16 +5,17 @@ interface InputProps {
     value: string,
     onChange: (e: ChangeEvent) => void,
     type?: string,
-    multiline?: boolean
+    multiline?: boolean,
+    error?: boolean
 }
 
-const FormInput = ({label, value, onChange, type="text", multiline=false}: InputProps) => {
+const FormInput = ({label, value, onChange, type="text", multiline=false, error=false}: InputProps) => {
     return (
-        <div className={""}>
+        <div className={error ? "border-red-400 border-solid border border-opacity-30" : ""}>
             {
                 multiline ?
                     <textarea
-                        className={"outline-0 w-80 p-2 bg-gray-100 focus:drop-shadow-sm text-gray-600"}
+                        className={"outline-0 min-h-[40px] w-80 p-2 bg-gray-100 focus:drop-shadow-sm text-gray-600"}
                         rows={5}
                         value={value}
                         placeholder={label}

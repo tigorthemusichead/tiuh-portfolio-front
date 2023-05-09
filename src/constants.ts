@@ -9,6 +9,10 @@ export const NAV_BAR = [
         href: "/"
     },
     {
+        label: "Projects",
+        href: "/projects"
+    },
+    {
         label: "About",
         href: "/about"
     },
